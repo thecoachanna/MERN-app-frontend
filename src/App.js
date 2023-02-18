@@ -12,6 +12,7 @@ import SignUp from "./components/auth/SignUp";
 import SignIn from "./components/auth/SignIn";
 import SignOut from "./components/auth/SignOut";
 import ChangePassword from "./components/auth/ChangePassword";
+import ShowItem from "./components/items/ShowItem";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -65,6 +66,10 @@ const App = () => {
               <ChangePassword msgAlert={msgAlert} user={user} />
             </RequireAuth>
           }
+        />
+        <Route
+          path="items/:id"
+          element={<ShowItem user={user} msgAlert={msgAlert} />}
         />
       </Routes>
       {msgAlerts.map((msgAlert) => (
